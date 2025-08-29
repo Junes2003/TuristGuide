@@ -30,8 +30,4 @@ public class TouristAttraction {
         this.description = description;
     }
 
-    public TouristAttraction add(TouristAttraction attraction) {
-
-        return attraction;
-    }
 }

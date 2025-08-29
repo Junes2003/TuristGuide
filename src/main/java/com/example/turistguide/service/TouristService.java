@@ -8,7 +8,7 @@ import java.util.List;
 
 @Service
 public class TouristService {
-    private static TouristRepository repository;
+    private TouristRepository repository;
 
     public TouristService(TouristRepository touristRepository) {
         this.repository = touristRepository;
@@ -22,15 +22,15 @@ public class TouristService {
         return repository.findTouristAttractionByName(name);
     }
 
-    public static TouristAttraction addTouristAttraction(TouristAttraction touristAttraction) {
+    public TouristAttraction addTouristAttraction(TouristAttraction touristAttraction) {
         return repository.addTouristAttraction(touristAttraction);
     }
 
-    public static TouristAttraction updateTouristAttraction(String name, String newDescription) {
+    public TouristAttraction updateTouristAttraction(String name, String newDescription) {
         return repository.updateTouristAttraction(name, newDescription);
     }
 
-    public static TouristAttraction deleteTouristAttraction(String name) {
+    public TouristAttraction deleteTouristAttraction(String name) {
         return repository.deleteTouristAttraction(name);
     }
 }

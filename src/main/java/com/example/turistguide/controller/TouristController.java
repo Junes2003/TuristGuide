@@ -36,13 +36,13 @@ public class TouristController {
 
     @PostMapping("/add")
     public ResponseEntity<TouristAttraction> addTouristAttraction(@RequestBody TouristAttraction attraction){
-        TouristAttraction newTouristAttraction = TouristService.addTouristAttraction(attraction);
+        TouristAttraction newTouristAttraction = touristService.addTouristAttraction(attraction);
         return new ResponseEntity<>(newTouristAttraction, HttpStatus.CREATED);
     }
 
     @PostMapping("/update/{attractionName}")
     public ResponseEntity<TouristAttraction> updateTouristAttraction(@PathVariable String attractionName, @RequestBody String newDescription) {
-        TouristAttraction updatedTouristAttraction = TouristService.updateTouristAttraction(attractionName, newDescription);
+        TouristAttraction updatedTouristAttraction = touristService.updateTouristAttraction(attractionName, newDescription);
 
         if (updatedTouristAttraction != null) {
             return new ResponseEntity<>(updatedTouristAttraction, HttpStatus.OK);
@@ -52,7 +52,7 @@ public class TouristController {
 
     @PostMapping ("/delete/{name}")
     public ResponseEntity<TouristAttraction> deleteTouristAttraction(@PathVariable String name) {
-        TouristAttraction deletedTouristAttraction = TouristService.deleteTouristAttraction(name);
+        TouristAttraction deletedTouristAttraction = touristService.deleteTouristAttraction(name);
         if (deletedTouristAttraction == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
