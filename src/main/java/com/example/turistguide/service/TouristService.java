@@ -1,17 +1,15 @@
-package com.example.turistguide.service;
-
-import com.example.turistguide.model.TouristAttraction;
-import com.example.turistguide.repository.TouristRepository;
+import com.example.touristGuide.model.TouristAttraction;
+import com.example.touristGuide.repository.TouristRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class TouristService {
-    private final TouristRepository repository;
+    private static TouristRepository repository;
 
-    public TouristService(TouristRepository repository) {
-        this.repository = repository;
+    public TouristService(TouristRepository touristRepository) {
+        this.repository = touristRepository;
     }
 
     public List<TouristAttraction> getAllAttractions() {
@@ -22,15 +20,15 @@ public class TouristService {
         return repository.findTouristAttractionByName(name);
     }
 
-    public TouristAttraction addTouristAttraction(TouristAttraction touristAttraction) {
+    public static TouristAttraction addTouristAttraction(TouristAttraction touristAttraction) {
         return repository.addTouristAttraction(touristAttraction);
     }
 
-    public TouristAttraction updateTouristAttraction(String name, String description) {
-        return repository.updateTouristAttraction(name, description);
+    public static TouristAttraction updateTouristAttraction(String name, String newDescription) {
+        return repository.updateTouristAttraction(name, newDescription);
     }
 
-    public boolean deleteTouristAttraction(String name) {
+    public static TouristAttraction deleteTouristAttraction(String name) {
         return repository.deleteTouristAttraction(name);
     }
 }

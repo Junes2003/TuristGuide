@@ -4,21 +4,21 @@ public class TouristAttraction {
     private String name;
     private String description;
 
-    public TouristAttraction (String name, String description) {
+    public TouristAttraction(String name, String description) {
         this.name = name;
         this.description = description;
     }
 
-    public static TouristAttraction addAttraction(TouristAttraction touristAttraction) {
-        return touristAttraction;
-    }
-
+//    public TouristAttraction addAttraction(TouristAttraction touristAttraction) {
+//        return touristAttraction;
+//    }
+    // ER OVENSTÅENDE OVERHOVEDET NØDVENDIG?
 
     public String getName() {
         return name;
     }
 
-    public String getDescription(){
+    public String getDescription() {
         return description;
     }
 
@@ -30,6 +30,8 @@ public class TouristAttraction {
         this.description = description;
     }
 
-    public void add(TouristAttraction attraction) {
+    public TouristAttraction add(TouristAttraction attraction) {
+
+        return attraction;
     }
 }
