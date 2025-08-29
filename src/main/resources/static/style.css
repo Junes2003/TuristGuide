@@ -1,0 +1,17 @@
+body {
+    background: #f6d8cb;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.attraktion {
+    display: inline-block;
+    margin: 10px;
+    vertical-align: top;
+}
+
+.attraktion img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+}
