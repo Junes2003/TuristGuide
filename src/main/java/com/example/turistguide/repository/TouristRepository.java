@@ -15,7 +15,7 @@ public class TouristRepository {
         touristAttractions.add(new TouristAttraction("Den lille havfrue", "Berømt statue i hele verden"));
         touristAttractions.add(new TouristAttraction("Runde Tårn", "Kendt turistattraktion med god udsigt"));
         touristAttractions.add(new TouristAttraction("Bella Sky", "Hotel på Amager"));
-        touristAttractions.add(new TouristAttraction("Gå Spis", "Junes-Elsayed"));
+        touristAttractions.add(new TouristAttraction("Gå Spis", "Junes El-Sayed"));
         touristAttractions.add(new TouristAttraction("Parken", "Største stadion i Danmark"));
     }
 
