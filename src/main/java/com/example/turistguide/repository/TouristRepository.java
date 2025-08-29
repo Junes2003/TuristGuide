@@ -1,5 +1,6 @@
-package com.example.turistguide.repository;
-import com.example.turistguide.model.TouristAttraction;
+package com.example.touristGuide.repository;
+
+import com.example.touristGuide.model.TouristAttraction;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -7,24 +8,24 @@ import java.util.List;
 
 @Repository
 public class TouristRepository {
-    private List<TouristAttraction> attractions = new ArrayList<>();
+    private final List<TouristAttraction> touristAttractions = new ArrayList<>();
 
     public TouristRepository() {
-        attractions.add(new TouristAttraction("Den lille havfrue ", "Berømt statue i hele verden"));
-        attractions.add(new TouristAttraction("Runde Tårn", "Kendt turistattraktion med god udsigt"));
-        attractions.add(new TouristAttraction("Bella Sky", "Hotel på Amager"));
-        attractions.add(new TouristAttraction("Louisiana", "Museum "));
-        attractions.add(new TouristAttraction("Parken", "Største stadion i Danmark "));
+        touristAttractions.add(new TouristAttraction("Den lille havfrue", "Berømt statue i hele verden"));
+        touristAttractions.add(new TouristAttraction("Runde Tårn", "Kendt turistattraktion med god udsigt"));
+        touristAttractions.add(new TouristAttraction("Bella Sky", "Hotel på Amager"));
+        touristAttractions.add(new TouristAttraction("Gå Spis", "Junes-Elsayed"));
+        touristAttractions.add(new TouristAttraction("Parken", "Største stadion i Danmark"));
     }
 
-    public void addTouristAttraction(TouristAttraction attraction) {
-        attractions.add(attraction);
+    public TouristAttraction addTouristAttraction(TouristAttraction attraction) {
+        touristAttractions.add(attraction);
+        return attraction;
     }
 
     public TouristAttraction updateTouristAttraction(String name, String description) {
-        for (TouristAttraction attraction : attractions) {
+        for (TouristAttraction attraction : touristAttractions) {
             if (attraction.getName().equalsIgnoreCase(name)) {
-                attraction.setName(name);
                 attraction.setDescription(description);
                 return attraction;
             }
@@ -33,24 +34,24 @@ public class TouristRepository {
     }
 
     public TouristAttraction deleteTouristAttraction(String name) {
-        TouristAttraction attractionToDelete = null;
-        for (TouristAttraction attraction : attractions) {
-            if (attraction.getName().equalsIgnoreCase(name)) {
-                attractionToDelete = attraction;
-            }
-        }
+        TouristAttraction attractionToDelete = findTouristAttractionByName(name);
         if (attractionToDelete != null) {
-            attractions.remove(attractionToDelete);
+            touristAttractions.remove(attractionToDelete);
             return attractionToDelete;
         }
         return null;
     }
 
-
     public List<TouristAttraction> getAllAttractions() {
-        return attractions;
+        return new ArrayList<>(touristAttractions);
+    }
+
+    public TouristAttraction findTouristAttractionByName(String name) {
+        for (TouristAttraction attraction : touristAttractions) {
+            if (attraction.getName().equalsIgnoreCase(name)) {
+                return attraction;
+            }
+        }
+        return null;
     }
 }
-   // public TouristAttraction findTouristAttractionByName(String name) {
-   // }
-//}
