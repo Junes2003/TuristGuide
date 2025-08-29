@@ -1,8 +1,8 @@
-package com.example.touristGuide.controller;
+package com.example.turistguide.controller;
 
 
-import com.example.touristGuide.model.TouristAttraction;
-import com.example.touristGuide.service.TouristService;
+import com.example.turistguide.model.TouristAttraction;
+import com.example.turistguide.service.TouristService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;

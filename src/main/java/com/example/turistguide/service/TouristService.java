@@ -1,5 +1,7 @@
-import com.example.touristGuide.model.TouristAttraction;
-import com.example.touristGuide.repository.TouristRepository;
+package com.example.turistguide.service;
+
+import com.example.turistguide.model.TouristAttraction;
+import com.example.turistguide.repository.TouristRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
